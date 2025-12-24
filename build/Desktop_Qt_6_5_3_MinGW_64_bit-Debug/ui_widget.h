@@ -12,7 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,30 +21,41 @@ class Ui_Widget
 {
 public:
     QFrame *frame;
-    QLabel *label;
     QWidget *leftwidget;
+    QStackedWidget *stackedWidget;
+    QWidget *page;
+    QWidget *page_2;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
-        Widget->resize(1360, 841);
+        Widget->resize(1360, 722);
         frame = new QFrame(Widget);
         frame->setObjectName("frame");
         frame->setGeometry(QRect(0, 0, 1361, 121));
+        frame->setStyleSheet(QString::fromUtf8("background-image: url(:/images/bk1.jpg);"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        label = new QLabel(frame);
-        label->setObjectName("label");
-        label->setGeometry(QRect(478, 39, 321, 61));
-        QFont font;
-        font.setPointSize(14);
-        label->setFont(font);
         leftwidget = new QWidget(Widget);
         leftwidget->setObjectName("leftwidget");
-        leftwidget->setGeometry(QRect(0, 119, 280, 521));
+        leftwidget->setGeometry(QRect(0, 119, 291, 601));
+        leftwidget->setStyleSheet(QString::fromUtf8("background-image: url(:/images/bk1.jpg);"));
+        stackedWidget = new QStackedWidget(Widget);
+        stackedWidget->setObjectName("stackedWidget");
+        stackedWidget->setGeometry(QRect(290, 120, 1071, 601));
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
+        page = new QWidget();
+        page->setObjectName("page");
+        stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName("page_2");
+        stackedWidget->addWidget(page_2);
 
         retranslateUi(Widget);
+
+        stackedWidget->setCurrentIndex(1);
+
 
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
@@ -52,7 +63,6 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
-        label->setText(QCoreApplication::translate("Widget", "\350\277\231\346\230\257\344\270\212\350\276\271\346\241\206", nullptr));
     } // retranslateUi
 
 };

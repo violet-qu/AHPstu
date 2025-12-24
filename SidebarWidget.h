@@ -24,6 +24,19 @@ public:
     QPushButton* archiveModifyButton() const;
     QPushButton* archiveAddButton() const;
 
+    QToolBox *m_toolBox;
+
+    // 三个主页面签
+    QWidget *m_archiveSection;
+    QWidget *m_analysisSection;
+    QWidget *m_systemSection;
+
+    // 档案管理按钮
+    QPushButton *m_btnQuery;
+    QPushButton *m_btnDelete;
+    QPushButton *m_btnModify;
+    QPushButton *m_btnAdd;
+
 signals:
     // 档案管理按钮点击信号
     void archiveQueryClicked();
@@ -48,18 +61,7 @@ private:
     void applyAcademicStyle();
 
 private:
-    QToolBox *m_toolBox;
 
-    // 三个主页面签
-    QWidget *m_archiveSection;
-    QWidget *m_analysisSection;
-    QWidget *m_systemSection;
-
-    // 档案管理按钮
-    QPushButton *m_btnQuery;
-    QPushButton *m_btnDelete;
-    QPushButton *m_btnModify;
-    QPushButton *m_btnAdd;
 };
 
 #endif // SIDEBARWIDGET_H

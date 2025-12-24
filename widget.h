@@ -21,6 +21,11 @@ public:
     ~Widget();
     QSqlDatabase db;
     void Database_Init();
+private slots:
+    void onArchiveQueryClicked();
+    void onArchiveDeleteClicked();
+    void onArchiveModifyClicked();
+    void onArchiveAddClicked();
 
 private:
     Ui::Widget *ui;
