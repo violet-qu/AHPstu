@@ -1,16 +1,12 @@
 #include "formarchives.h"
 #include "ui_formarchives.h"
 #include <QSqlDatabase>
-
+#include "widget.h"
+#include<iostream>
 FormArchives::FormArchives(QWidget *parent): QWidget(parent) , ui(new Ui::FormArchives)
 {
     ui->setupUi(this);
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("E://graduation_project//Archivesdata.db"); // 数据库文件名（或完整路径）
-    if (!db.open()) {
-        qDebug() << "Error: Failed to open database:" << db.lastError().text();
-        return;
-    }
+    Database_Init();
     QueryStuId("22041325");
 }
 FormArchives::~FormArchives()
@@ -18,13 +14,21 @@ FormArchives::~FormArchives()
     delete ui;
 }
 
+void FormArchives::Database_Init()
+{
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("E://graduation_project//Archivesdata.db"); // 数据库文件名（或完整路径）
+    if (!db.open()) {
+        qDebug() << "Error: Failed to open database:" << db.lastError().text();
+        return;
+    }
+}
 void FormArchives::QueryStuId(const QString& number)
 {
     QSqlQuery query;
     QString num_str = "'" + number + "'";
     if (query.exec("SELECT * FROM stu WHERE 学号=" + num_str)) {
         if(query.next()) {
-            qDebug() << "yes";
             for(int i=1;i<=18;i++)
             {
                 // 构造对象名

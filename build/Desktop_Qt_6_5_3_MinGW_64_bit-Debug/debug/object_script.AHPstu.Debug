@@ -1,0 +1,16 @@
+debug/formaddarchives.o
+debug/formarchives.o
+debug/leftmenubutton.o
+debug/main.o
+debug/sidebarwidget.o
+debug/universitylineedit.o
+debug/universitypushbutton.o
+debug/widget.o
+debug/qrc_res.o
+debug/moc_formaddarchives.o
+debug/moc_formarchives.o
+debug/moc_leftmenubutton.o
+debug/moc_sidebarwidget.o
+debug/moc_universitylineedit.o
+debug/moc_universitypushbutton.o
+debug/moc_widget.o

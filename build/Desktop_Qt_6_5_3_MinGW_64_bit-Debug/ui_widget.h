@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +20,29 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
+    QFrame *frame;
+    QLabel *label;
+    QWidget *leftwidget;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
         Widget->resize(1360, 841);
+        frame = new QFrame(Widget);
+        frame->setObjectName("frame");
+        frame->setGeometry(QRect(0, 0, 1361, 121));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        label = new QLabel(frame);
+        label->setObjectName("label");
+        label->setGeometry(QRect(478, 39, 321, 61));
+        QFont font;
+        font.setPointSize(14);
+        label->setFont(font);
+        leftwidget = new QWidget(Widget);
+        leftwidget->setObjectName("leftwidget");
+        leftwidget->setGeometry(QRect(0, 119, 280, 521));
 
         retranslateUi(Widget);
 
@@ -33,6 +52,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        label->setText(QCoreApplication::translate("Widget", "\350\277\231\346\230\257\344\270\212\350\276\271\346\241\206", nullptr));
     } // retranslateUi
 
 };

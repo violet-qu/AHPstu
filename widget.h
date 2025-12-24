@@ -2,7 +2,10 @@
 #define WIDGET_H
 
 #include <QWidget>
-
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlTableModel>
+#include <QSqlDatabase>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -16,6 +19,8 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    QSqlDatabase db;
+    void Database_Init();
 
 private:
     Ui::Widget *ui;

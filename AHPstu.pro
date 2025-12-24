@@ -11,17 +11,27 @@ CONFIG += c++17
 SOURCES += \
     formaddarchives.cpp \
     formarchives.cpp \
+    leftmenubutton.cpp \
     main.cpp \
+    sidebarwidget.cpp \
+    universitylineedit.cpp \
+    universitypushbutton.cpp \
     widget.cpp
 
 HEADERS += \
     formaddarchives.h \
     formarchives.h \
+    leftmenubutton.h \
+    sidebarwidget.h \
+    universitylineedit.h \
+    universitypushbutton.h \
     widget.h
 
 FORMS += \
     formaddarchives.ui \
     formarchives.ui \
+    leftmenubutton.ui \
+    sidebarwidget.ui \
     widget.ui
 
 # Default rules for deployment.

@@ -1,0 +1,16 @@
+release/formaddarchives.o
+release/formarchives.o
+release/leftmenubutton.o
+release/main.o
+release/sidebarwidget.o
+release/universitylineedit.o
+release/universitypushbutton.o
+release/widget.o
+release/qrc_res.o
+release/moc_formaddarchives.o
+release/moc_formarchives.o
+release/moc_leftmenubutton.o
+release/moc_sidebarwidget.o
+release/moc_universitylineedit.o
+release/moc_universitypushbutton.o
+release/moc_widget.o
